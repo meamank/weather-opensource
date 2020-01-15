@@ -1,0 +1,248 @@
+/* Empty. Add your own CSS if you like */
+*{
+  font-family: "Roboto", Times, serif;
+}
+.city-name {
+  color:#fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+.current-date{
+  color:#fff;
+  font-size: 11px;
+    font-weight: 600;
+}
+.temp-icon-tab {
+  color: #fff;
+  text-align: center;
+    position: relative;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.weather-details {
+  color: #fff;
+  margin: 20px;
+    text-align: center;
+}
+.weekly-weather-cardy{
+  color:#fff;
+}
+.summary {
+  color:#fff;
+  font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.temp {
+  color: #fff;
+  margin-left:0px;
+  font-size: 13px;
+    font-weight: 600;
+}
+.temp-inner {
+  font-size: 40px;
+    color: #fff;
+    padding: 5px;
+}
+/*.icon-main {
+  height: 80px;
+    position: absolute;
+    bottom: -50px;
+}*/
+body{
+  background-color: #1a1a1a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%231a1a1a' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23181719' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23161419' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23141018' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23120c18' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23100717' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.text {
+  font-weight: 600;
+    margin: 10px;
+}
+.hourly-tab{
+  margin: auto;
+  border-top: solid 1px #212020;
+  position: relative;
+  height:400px;
+  max-width: 300px;
+}
+.hourly-title {
+  padding-top:10px; 
+  text-align: center;
+  color: #fff
+}
+
+.table-col{
+  border-right:solid 1px #212020;
+}
+.table-col:last-child{
+  border-right:none;
+}
+
+.city-tab{
+  text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+.icon {
+  display: block;
+  height: 40px;
+}
+.icon-main {
+  height: 55px;
+  padding: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+td{
+  text-align: center;
+}
+.tTime {
+  font-size: 11px;
+  font-weight: 600;
+}
+.humidity {
+  text-align: center;
+  font-size: 13px;
+    font-weight: 600;
+}
+
+/*Chart.JS CSS*/
+
+body {
+  background-color: #f3f5f7;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.cardy {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cardy .chart-container{
+  position: absolute;
+  top: 54%;
+  width: 300px!important;
+  height: 150px;
+}
+/* hide limit values on X axis */
+.cardy #canvas {
+  margin-top: 10px;
+  width: 300px!important;
+  height:90px;
+}
+
+.axis {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  bottom: 50%;
+  text-align: center;
+}
+
+.axis .tick {
+  flex: 1;
+  position: relative;
+  font-size: 11px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+
+.axis .tick::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.axis .tick:last-child::after {
+  width: 0px;
+  height: 0px;
+  
+}
+
+.axis .tick .value {
+  transform: translateY(-240px);
+  opacity: 0;
+  transition: all 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: #fff;
+  border-radius: 2px;
+  width: 100%;
+  line-height: 20px;
+}
+
+.axis .tick:hover .value.value--this {
+  transform: translateY(-160px);
+  display: block;
+  opacity: 0.4;
+}
+
+.value.value--this {
+  color: #fff;
+  font-weight: bold;
+}
+
+.day-number {
+  display: block;
+}
+
+.day-name {
+  display: block;
+  opacity: 0.4;
+}
+
+/* Animated background, credits: Manuel Pinto, https://codepen.io/P1N2O/pen/pyBNzX */
+/*.cardy {
+  background: linear-gradient(-45deg, #5555FF, #9787FF, #FF55B8, #FF8787);
+  background-size: 400% 400%;
+  animation: bg 20s infinite;
+}*/
+
+@keyframes bg
+{
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.tabs{
+  display: none !important;
+}

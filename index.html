@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="starter" ng-controller="HomeCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>{{currentCity}} - {{current.currently.temperature}}°</title>
+
+    <link href="css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- angularjs js -->
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-resource.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/plugins/skycons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
+
+  </head>
+  <body>
+
+    <div class="container" >
+        <div class="main-weather-card">
+          <div class="city-tab">
+            <h5 class="city-name">{{currentCity}}</h5>
+            <p class="current-date"> {{today | date: "EEE dd MMMM h:mm a"}} </p>
+          </div>
+          <div class="temp-icon-tab">
+              <div class="temp">
+                <p class="temp-inner">{{current.currently.temperature}}°</p>
+              </div>
+              <div class="icon-main">
+                <canvas id="weather-icon" width="35" height="35"></canvas>
+                <!-- <img class="icon" ng-src="img/icons/{{current.currently.icon}}.svg"></img> -->
+              </div>
+          </div>
+        </div>
+          <div class="weather-details">
+            <h5 class="summary"> {{current.currently.summary}}</h5>
+        </div>
+
+        <div class="hourly-tab">
+          <div class="hourly-title">
+            Hourly
+            </div>
+          <div class="cardy">
+            
+              <div class="axis">
+                <div class="tick" ng-repeat= "data in current.hourly.data | limitTo : 5">
+                  <div class="tTime">{{data.time * 1000 | date: "shortTime"}}</div>
+              
+                  
+               
+                  <div>
+                    <canvas id="weather-icon-{{$index}}" width="25" height="25"></canvas>
+                  </div>
+                  <div class="humidity">
+                    {{data.humidity | floor}}%
+                  </div>
+                  <div class="temp">{{data.temperatureC}}°</div>
+                </div>
+
+              </div>
+
+              <div class="chart-container">
+                <canvas id="canvas" width="300" height="90"></canvas>
+              </div>
+        </div>
+    </div>
+  </div> 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+  </body>
+</html>
